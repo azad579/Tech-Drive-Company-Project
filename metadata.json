@@ -1,0 +1,6 @@
+{
+  "name": "Point of Sale (POS) System",
+  "description": "Modern high-speed Retail Point of Sale (POS) interface with fast product catalog, barcode scanning, quick customer creation, real-time cart and thermal invoice receipt generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

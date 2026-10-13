@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Custom scrollbars for high-speed POS panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.55);
+}
+
+/* Tabular numerals for price alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Print isolation engine for receipts and commercial statements (A4 Size Optimized) */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #thermal-receipt-print-area, #thermal-receipt-print-area *,
+  #client-statement-print-area, #client-statement-print-area *,
+  #inventory-report-print-area, #inventory-report-print-area *,
+  #printable-a4-invoice, #printable-a4-invoice *,
+  #printable-a4-voucher, #printable-a4-voucher *,
+  #printable-a4-inventory-tx, #printable-a4-inventory-tx *,
+  .printable-document, .printable-document * {
+    visibility: visible;
+  }
+  #thermal-receipt-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0 !important;
+    padding: 6mm !important;
+    font-size: 11px !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  #printable-a4-invoice,
+  #printable-a4-voucher,
+  #printable-a4-inventory-tx,
+  #client-statement-print-area,
+  #inventory-report-print-area,
+  .printable-document {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 210mm !important;
+    margin: 0 auto !important;
+    padding: 8mm 12mm !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
