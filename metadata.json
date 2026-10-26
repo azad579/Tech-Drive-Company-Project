@@ -1,0 +1,6 @@
+{
+  "name": "Tech Drive ERP",
+  "description": "Enterprise Resource Planning and management system for Tech Drive - Laptop & IT Partner, covering Sales, Purchase, Inventory, Accounts, and Warranty Management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

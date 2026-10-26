@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy-dark: #00284d;
+    --brand-navy: #00305d;
+    --brand-blue: #0084bf;
+    --brand-light-blue: #0093d0;
+    --brand-gold: #f39c12;
+  }
+
+  body {
+    font-family: 'Roboto', 'AdorshoLipi', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #ecf0f5;
+    color: #333333;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #a0aec0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Bell shake animation */
+@keyframes shake_bell {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
+  40%, 60% { transform: translate3d(3px, 0, 0); }
+}
+
+.shake_bell {
+  animation: shake_bell 2s cubic-bezier(.36, .07, .19, .97) both infinite;
+}
+
+/* Axes vertical ribbon on sidebar */
+.axesba {
+  width: 32px;
+  background: linear-gradient(180deg, #8e2a49 0%, #30277a 50%, #ef2f6c 100%);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.axesba-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  font-size: 11px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* Corner ribbon on small-box */
+.ribbon {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px;
+  left: -21px;
+}
+
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #79A70A;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #79A70A;
+}
+
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #79A70A;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #79A70A;
+}
+
+/* Tech Drive Shortcuts Small Box */
+.shortcuts .small-box {
+  border-radius: 0px;
+  color: #fff;
+  box-shadow: none;
+  background: linear-gradient(to bottom, #0092cc 0, #605ca8 100%) !important;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  min-height: 110px;
+}
+
+.shortcuts .small-box .icon {
+  color: rgba(0, 48, 93, 0.4);
+  top: 16px;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.3s;
+}
+
+.shortcuts .small-box:hover .icon {
+  transform: scale(1.1);
+}
+
+.shortcuts .inner {
+  text-align: right;
+  min-height: 100px;
+  padding: 12px 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.shortcuts .inner h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.shortcuts .inner p {
+  padding-top: 5px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  font-size: 13px;
+  color: #e0e7ff;
+}
+
+/* Button flat styling */
+.btn-flat {
+  border-radius: 0px !important;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.bg-purple {
+  background-color: #0084bf !important;
+  color: #ffffff !important;
+}
+
+.btn-flat.bg-purple:hover {
+  background-color: #00305d !important;
+  color: #ffffff !important;
+}
+
+/* AdminLTE & Axes boxes */
+.box {
+  position: relative;
+  border-radius: 3px;
+  background: #ffffff;
+  border-top: 3px solid #d2d6de;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.box.box-solid {
+  border-top: 0px;
+}
+
+.box-header {
+  color: #444;
+  display: block;
+  padding: 10px 14px;
+  position: relative;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.box-header .box-title {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  color: #333;
+}
+
+.box-body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 10px;
+}
+
+/* Notification table */
+.notification_table tr td {
+  padding: 8px 6px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.notification_table .db-noti-icons {
+  color: #0084bf;
+  font-size: 16px;
+  text-align: center;
+}
+
+.notification_table .db-noti-action-links {
+  width: 60px;
+  text-align: right;
+}
+
+/* Table striped & active rows */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Print Styles - Complete Isolation for Clean Output */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  /* Hide all app chrome, sidebars, headers, floating widgets, and toolbars */
+  header, 
+  nav, 
+  aside, 
+  .no-print, 
+  .axesba, 
+  .chat-widget, 
+  .shortcuts, 
+  .top-header-bar, 
+  .sidebar-container,
+  .floating-widget,
+  button:not(.allow-print) {
+    display: none !important;
+  }
+
+  /* Expand printable sheets to 100% width and remove borders/shadows */
+  .printable-sheet,
+  .print-area {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 10mm 15mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Ensure background colors on tables and headers print faithfully */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
